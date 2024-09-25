@@ -106,7 +106,7 @@ const Withdraw: React.FC = () => {
         transition={{ delay: 0.4, duration: 0.5 }}
         className="text-xl font-bold text-yellow-400 mb-8 text-center mt-4"
       >
-        Withdraw Your NOT
+        Withdraw Your CAPY
       </motion.h1>
 
       <motion.div 
@@ -153,7 +153,7 @@ const Withdraw: React.FC = () => {
         className="mt-6 bg-gray-800 p-4 rounded-lg"
       >
         <p className="text-white text-lg">
-          Min Withdrawal: 50 NOT<br/>
+          Min Withdrawal: 50 CAPY<br/>
           Max Withdrawal: No Limit
         </p>
       </motion.div>
