@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1.70666in" height="1.70666in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1707 1707"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil2 {fill:url(#id0)}
+    .fil1 {fill:url(#id1)}
+    .fil0 {fill:url(#id2)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="459.811" y1="787.24" x2="1377.46" y2="787.24">
+   <stop offset="0" style="stop-opacity:1; stop-color:#29537C"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#00A6CF"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="199.319" y1="853.205" x2="1507.87" y2="853.205">
+   <stop offset="0" style="stop-opacity:1; stop-color:#336699"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#00CCFF"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="0.456693" y1="853.327" x2="1706.2" y2="853.327">
+   <stop offset="0" style="stop-opacity:1; stop-color:#FF9911"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#FF6600"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M1522 1624l-1337 0c-102,0 -185,-83 -185,-184l0 -1173c0,-102 83,-185 185,-185l1337 0c102,0 184,83 184,185l0 1173c1,101 -82,184 -184,184z"/>
+  <path class="fil1" d="M1082 1507c-52,0 -102,-20 -139,-57l-203 -203 -346 79c-16,0 -28,-14 -26,-30l52 -370 -163 -163c-50,-51 -69,-121 -51,-189 19,-68 70,-120 138,-138 0,0 0,0 0,0l918 -231c69,-17 140,3 190,54 49,49 67,119 49,186l-231 917c-8,33 -25,63 -50,87l0 0c-35,37 -84,58 -136,58 -1,0 -1,0 -2,0z"/>
+  <path class="fil2" d="M479 1258c-7,0 -14,-3 -19,-8l44 -396 833 -533c11,-8 26,-5 35,5 8,11 7,26 -2,36l-872 888c-6,5 -12,8 -19,8z"/>
+ </g>
+</svg>

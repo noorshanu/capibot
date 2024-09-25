@@ -1,0 +1,27 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loadingspinner {
+  width: 208px;
+  height: 208px;
+  position: relative;
+  animation: rotate 2s linear infinite;
+}
+
+.coin {
+  width: 100%;
+  height: 100%;
+  background-image: url('image/cp.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
