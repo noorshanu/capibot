@@ -167,7 +167,7 @@ function Home() {
         hprofit_date: Date.now(),
       };
 
-      navigator.sendBeacon(`https://tapnot.xyz/api/update-user/${tokenState?.userId}`, JSON.stringify(data));
+      navigator.sendBeacon(`https://api.capybaraminister.com/api/update-user/${tokenState?.userId}`, JSON.stringify(data));
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
@@ -192,7 +192,7 @@ function Home() {
       <div className="pt-2 sm:pt-3 px-2 sm:px-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img 
-            src={user?.profile_pic ? `https://tapnot.xyz/${user.profile_pic}` : "/image/60111.jpg"} 
+            src={user?.profile_pic ? `https://api.capybaraminister.com/${user.profile_pic}` : "/image/60111.jpg"} 
             className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-black border-2"
             alt="User profile"
           />
