@@ -7,7 +7,7 @@ import "./index.css";
 
 WebApp.ready();
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <TonConnectUIProvider manifestUrl="https://www.tapnot.app/tonconnect-manifest.json">
+  <TonConnectUIProvider manifestUrl="https://capibot.vercel.app/capy-manifest.json">
     <App />
   </TonConnectUIProvider>
 );
