@@ -1,8 +1,8 @@
 import axios from 'axios';
 import WebApp from '@twa-dev/sdk';
 const api = axios.create({
-    // baseURL: `http://localhost:3000/api`,
-    baseURL: `https://api.capybaraminister.com/api`,
+    baseURL: `http://localhost:3000/api`,
+    // baseURL: `https://api.capybaraminister.com/api`,
     headers: {
       'Content-Type': 'application/json',
     }

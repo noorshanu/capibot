@@ -27,7 +27,7 @@ const DEGENS: React.FC = () => {
       //  tokens[i].title = "Airdrop CapybaraCoin";
    // }
 //}
-
+console.log(tokens);
   const tokensList = tokenState?.tokens?.length ? tokenState.tokens.map((t: any) => t.tokenId) : [];
   const wallet = useTonAddress();
   const [tonConnectUI] = useTonConnectUI();
@@ -53,7 +53,7 @@ const DEGENS: React.FC = () => {
       return acc;
     }, {} as Record<string, string>);
   }, [tokens]);
-
+  console.log(tokens);
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -72,6 +72,7 @@ const DEGENS: React.FC = () => {
       <div className="grid grid-cols-2 gap-2 sm:gap-4">
         <AnimatePresence>
           {tokens.map((token: tokenProps, index) => (
+            
             <motion.div
               className={`${tokensList.includes(token._id) ? 'pointer-events-none opacity-30' : ''} overflow-hidden rounded-2xl`}
               key={token.title}
