@@ -83,7 +83,7 @@ const welcomeMsg = `👋 Hello there!
 const welcomeBtn = {
   reply_markup: {
     inline_keyboard: [
-      [{ text: 'Play', web_app: { url: 'https://www.tapnot.app/' } }]
+      [{ text: 'Play', web_app: { url: 'https://play.capybaraminister.com/' } }]
     ]
   }
 }
