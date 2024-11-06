@@ -176,19 +176,32 @@ app.post('/api/update-user/:userId', verifyHashMiddleware, async (req, res) => {
   const { userId } = req.params;
   try {
       // Read the raw body data
-      const buffer = await rawBody(req);
-      const data = buffer.toString('utf-8');
-      
+      // const buffer = await rawBody(req);
+      // const data = buffer.toString('utf-8');
+      const data = req.body
       // If data is JSON, parse it
       let parsedData;
-      try {
-          parsedData = JSON.parse(data);
-      } catch (e) {
-          parsedData = data; // Fallback to raw string if it's not JSON
+      const getUser = await User.findOne({ userId: userId});
+      if(!getUser) {
+        const newUser = new User();
+        newUser.userId = userId;
+        newUser.wallet_address = userId;
+        newUser.first_name = 'test';
+        newUser.energy = req.body?.energy;
+        newUser.hprofit_date = req.body?.hprofit_date;
+        newUser.refill_date = req.body?.refill_date;
+        newUser.score = req.body?.score;
+        await newUser.save()
+        return res.json({ message: 'User updated or inserted successfully', newUser });
       }
+      // try {
+      //     parsedData = JSON.parse(data);
+      // } catch (e) {
+      //     parsedData = data; // Fallback to raw string if it's not JSON
+      // }
       const user = await User.findOneAndUpdate(
           { userId },
-          parsedData,
+          data,
           { 
               new: true,
               upsert: true,
@@ -218,7 +231,9 @@ app.put('/api/update-wallet/:address', verifyHashMiddleware, async (req, res) =>
   }
 });
 app.get('/api/user-info/:userId', verifyHashMiddleware, async (req, res) => {
+  // 1783245218
   const { userId } = req.params;
+  // id
   const { type } = req.query;
   
   const condition = type === 'address' ? { wallet_address: userId } : { userId }
@@ -365,7 +380,7 @@ app.put('/api/withdraw/:userId', verifyHashMiddleware, async (req, res) => {
 app.get('/api/friends-list/:userId', verifyHashMiddleware, async (req, res) => {
   const { userId } = req.params;
   try {
-    const user = await User.find({ referrer: userId });
+    const user = await User.find({ referrer: req.params.userId });
 
     res.json(user);
 } catch (err) {
@@ -375,9 +390,17 @@ app.get('/api/friends-list/:userId', verifyHashMiddleware, async (req, res) => {
 })
 // Set up Telegraf bot
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
+// bot.start(async (ctx) => {
+//   console.log("Bot received a start command.");
+//   console.log("Context:", ctx.message);
+//   bot.telegram.sendMessage(ctx.chat.id, "HI There")
+//   // The rest of your code...
+// });
 bot.start(async (ctx)=> {
-  const userId = ctx.message.from.id;
-  const payload = ctx.startPayload; // Extract the payload
+  debugger
+  console.log('inside bot')
+  const userId = ctx.from.id
+  const payload = ctx.payload; // Extract the payload
   const exitReferrer = await User.findOne({userId: payload});
   console.log(exitReferrer, 'exit')
   if (exitReferrer || !payload) {
@@ -454,6 +477,8 @@ bot.start(async (ctx)=> {
   }
 })
 bot.command('start', async (ctx) => {
+  console.log('inside bot')
+  debugger
   console.log(ctx.from)
   const dup = await User.findOne({userId: ctx.from.id})
   if (!dup) {
@@ -480,6 +505,8 @@ bot.command('start', async (ctx) => {
 });
 
 bot.on(message('web_app_setup_main_button'), async (ctx) => {
+  console.log('inside bot')
+  debugger
   const data = JSON.parse(ctx.message.web_app_data.data);
   // Save user data to MongoDB
   const user = new User({
