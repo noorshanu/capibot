@@ -181,19 +181,6 @@ app.post('/api/update-user/:userId', verifyHashMiddleware, async (req, res) => {
       const data = req.body
       // If data is JSON, parse it
       let parsedData;
-      const getUser = await User.findOne({ userId: userId});
-      if(!getUser) {
-        const newUser = new User();
-        newUser.userId = userId;
-        newUser.wallet_address = userId;
-        newUser.first_name = 'test';
-        newUser.energy = req.body?.energy;
-        newUser.hprofit_date = req.body?.hprofit_date;
-        newUser.refill_date = req.body?.refill_date;
-        newUser.score = req.body?.score;
-        await newUser.save()
-        return res.json({ message: 'User updated or inserted successfully', newUser });
-      }
       // try {
       //     parsedData = JSON.parse(data);
       // } catch (e) {
